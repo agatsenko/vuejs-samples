@@ -1,7 +1,8 @@
-import { namespace } from 'vuex-class';
+import * as actions from '@/store/counter/actions';
+import * as getters from '@/store/counter/getters';
+import * as mutations from '@/store/counter/mutations';
 import { RootState } from '@/store/index';
 import { Module } from 'vuex';
-import * as mutations from '@/store/counter/mutations';
 
 export interface CounterState {
   value: number;
@@ -15,27 +16,27 @@ export const counter: Module<CounterState, RootState> = {
   },
 
   getters: {
-    counterValue(state: CounterState): number {
+    [getters.COUNTER_VALUE](state: CounterState): number {
       return state.value;
     }
   },
 
   mutations: {
-    increment(state: CounterState) {
+    [mutations.INCREMENT](state: CounterState) {
       ++state.value;
     },
 
-    decrement(state) {
+    [mutations.DECREMENT](state) {
       --state.value;
     },
 
-    setValue(state, payload: number) {
+    [mutations.SET_VALUE](state, payload: number) {
       state.value = payload;
     }
   },
 
   actions: {
-    delayIncrement(context): Promise<number> {
+    [actions.DELAY_INCREMENT](context): Promise<number> {
       return new Promise<number>((resolve, reject) => {
         setTimeout(() => {
           context.commit(mutations.INCREMENT);

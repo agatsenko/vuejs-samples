@@ -36,10 +36,6 @@ export default class Counter extends Vue {
     this.setCounterMutation(0);
   }
 
-  mounted() {
-    console.log('mounted');
-  }
-
   delayIncrementCounter() {
     this.delayIncrementCounterAction().then(value =>
       alert(`delay increment counter: ${value}`)
