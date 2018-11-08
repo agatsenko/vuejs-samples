@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <h1>Vuejs Samples</h1>
-  <div id="nav">
+  <div class="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/counter.html">Counter</router-link> |
     <router-link to="/todo.html">TODO</router-link>
@@ -11,7 +11,7 @@
 </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +19,7 @@
   color: #2c3e50;
 }
 
-#nav {
+.nav {
   a {
     font-weight: bold;
     color: #2c3e50;
